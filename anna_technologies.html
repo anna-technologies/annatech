@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANNA Technologies Pvt. Ltd.</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --pink: #e8337c;
+    --violet: #7c3aed;
+    --grad: linear-gradient(135deg, #e8337c 0%, #a855f7 50%, #6366f1 100%);
+    --dark: #0d0d12;
+    --surface: #13131a;
+    --card: #1a1a24;
+    --border: rgba(255,255,255,0.08);
+    --text: #f0eeff;
+    --muted: #8b8aa8;
+    --accent: #c084fc;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 1rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(13,13,18,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
+  .nav-logo img { width: 38px; height: 38px; }
+  .nav-logo span {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 1.1rem;
+    background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    padding: 0.5rem 1.25rem;
+    background: var(--grad); border: none;
+    border-radius: 999px; color: #fff;
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 500;
+    cursor: pointer; text-decoration: none; transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 3rem 5rem;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 30%, rgba(168,85,247,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 70%, rgba(232,51,124,0.12) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0; opacity: 0.04;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 720px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.35rem 1rem;
+    background: rgba(168,85,247,0.15);
+    border: 1px solid rgba(168,85,247,0.35);
+    border-radius: 999px; font-size: 0.82rem; color: var(--accent);
+    margin-bottom: 1.75rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .badge-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    font-weight: 800; line-height: 1.05;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 .grad-text {
+    background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: 1.15rem; color: var(--muted); max-width: 560px;
+    line-height: 1.75; margin-bottom: 2.5rem;
+    animation: fadeUp 0.6s 0.2s ease both; font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.6s 0.3s ease both; }
+  .btn-primary {
+    padding: 0.75rem 2rem;
+    background: var(--grad); border: none; border-radius: 999px;
+    color: #fff; font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem; font-weight: 500; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn-ghost {
+    padding: 0.75rem 2rem; background: transparent;
+    border: 1px solid var(--border); border-radius: 999px; color: var(--muted);
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; cursor: pointer;
+    text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.25); color: var(--text); }
+
+  /* STATS */
+  .stats-bar {
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 2rem 3rem; display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1rem; background: var(--surface);
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 700;
+    background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+
+  /* SECTIONS */
+  section { padding: 6rem 3rem; }
+  .section-eyebrow {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700; line-height: 1.2; margin-bottom: 1rem;
+  }
+  .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; font-weight: 300; line-height: 1.75; }
+
+  /* PORTFOLIO */
+  .portfolio-header { margin-bottom: 3.5rem; }
+  .portfolio-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.25rem; }
+  .p-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 20px; padding: 2rem;
+    transition: transform 0.3s, border-color 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .p-card:hover { transform: translateY(-4px); border-color: rgba(168,85,247,0.3); }
+  .p-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--grad); opacity: 0; transition: opacity 0.3s;
+  }
+  .p-card:hover::before { opacity: 0.04; }
+  .p-card.large { grid-column: span 7; }
+  .p-card.medium { grid-column: span 5; }
+  .p-card.third { grid-column: span 4; }
+  .p-icon { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem; }
+  .p-card h3 { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.65rem; }
+  .p-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
+  .p-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+  .p-tag { padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.78rem; border: 1px solid var(--border); color: var(--muted); }
+  .p-tag.hot { background: rgba(232,51,124,0.12); border-color: rgba(232,51,124,0.3); color: #e8337c; }
+  .icon-hpc { background: rgba(99,102,241,0.15); }
+  .icon-qr  { background: rgba(232,51,124,0.15); }
+  .icon-ai  { background: rgba(168,85,247,0.15); }
+  .icon-dev { background: rgba(16,185,129,0.15); }
+  .icon-con { background: rgba(245,158,11,0.15); }
+
+  /* PARTNER */
+  .partner-section { background: var(--surface); }
+  .partner-inner { max-width: 960px; margin: 0 auto; text-align: center; }
+  .partner-card {
+    margin-top: 3rem; background: var(--card); border: 1px solid var(--border);
+    border-radius: 24px; padding: 3rem; display: flex; align-items: center; gap: 3rem; text-align: left;
+  }
+  .partner-logo-box {
+    width: 90px; height: 90px; flex-shrink: 0; border-radius: 22px;
+    background: var(--grad); display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: #fff;
+  }
+  .partner-card h3 { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .partner-card p { color: var(--muted); font-size: 0.95rem; font-weight: 300; line-height: 1.75; max-width: 500px; }
+
+  /* WHY */
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+  .why-card { padding: 1.75rem; border: 1px solid var(--border); border-radius: 16px; transition: border-color 0.3s; }
+  .why-card:hover { border-color: rgba(168,85,247,0.3); }
+  .why-num {
+    font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800;
+    background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    line-height: 1; margin-bottom: 0.75rem;
+  }
+  .why-card h4 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .why-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+  /* CTA */
+  .cta-section { text-align: center; padding: 7rem 3rem; background: var(--surface); position: relative; overflow: hidden; }
+  .cta-glow {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(168,85,247,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-section h2 {
+    font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800; line-height: 1.1; position: relative; z-index: 1; margin-bottom: 1.25rem;
+  }
+  .cta-section p { color: var(--muted); font-size: 1.05rem; margin-bottom: 2.5rem; position: relative; z-index: 1; }
+
+  /* FOOTER */
+  footer {
+    padding: 2.5rem 3rem; border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.85rem; color: var(--muted);
+  }
+  .footer-logo { display: flex; align-items: center; gap: 0.65rem; }
+  .footer-logo img { width: 28px; height: 28px; }
+  .footer-logo span {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem;
+    background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  /* BLACK HOLE CANVAS */
+  #bh-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+  body > *:not(#bh-canvas) { position: relative; z-index: 1; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .stats-bar { grid-template-columns: repeat(2,1fr); padding: 2rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .p-card.large, .p-card.medium, .p-card.third { grid-column: span 1; }
+    .partner-card { flex-direction: column; gap: 1.5rem; }
+    .why-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<canvas id="bh-canvas"></canvas>
+<script>
+(function(){
+  const canvas = document.getElementById('bh-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, cx, cy, particles = [], t = 0;
+
+  function resize(){
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    cx = W * 0.72; cy = H * 0.42;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const NUM = 520;
+  const BH_RADIUS = 90;
+  const DISK_INNER = 100;
+  const DISK_OUTER = 340;
+
+  function rand(a,b){ return a + Math.random()*(b-a); }
+
+  function mkParticle(){
+    const angle = rand(0, Math.PI*2);
+    const dist  = rand(DISK_INNER, DISK_OUTER);
+    const speed = 0.0012 + 0.006 / (dist / DISK_INNER);
+    const layer = Math.random();
+    return {
+      angle, dist,
+      baseAngle: angle,
+      speed: speed * (Math.random() > 0.5 ? 1 : -1) * (layer < 0.3 ? 2.2 : 1),
+      opacity: rand(0.15, layer < 0.2 ? 0.9 : 0.55),
+      size: rand(0.5, layer < 0.15 ? 2.2 : 1.4),
+      color: pickColor(dist, layer),
+      drift: rand(-0.00008, 0.00008),
+      inward: rand(0.0002, 0.0018),
+      layer, life: 1, age: rand(0, 1000)
+    };
+  }
+
+  function pickColor(dist, layer){
+    const t = (dist - DISK_INNER) / (DISK_OUTER - DISK_INNER);
+    if(layer < 0.1) return `rgba(255,255,255,`;
+    if(t < 0.15) return `rgba(255,200,80,`;
+    if(t < 0.35) return `rgba(255,120,50,`;
+    if(t < 0.6)  return `rgba(200,80,180,`;
+    return `rgba(120,80,220,`;
+  }
+
+  for(let i=0;i<NUM;i++) particles.push(mkParticle());
+
+  function drawLensRing(){
+    const grad = ctx.createRadialGradient(cx,cy,BH_RADIUS*0.6, cx,cy,BH_RADIUS*2.2);
+    grad.addColorStop(0,   'rgba(0,0,0,1)');
+    grad.addColorStop(0.55,'rgba(0,0,0,0.98)');
+    grad.addColorStop(0.72,'rgba(30,10,50,0.6)');
+    grad.addColorStop(0.88,'rgba(60,20,90,0.25)');
+    grad.addColorStop(1,   'rgba(0,0,0,0)');
+    ctx.beginPath();
+    ctx.arc(cx, cy, BH_RADIUS*2.2, 0, Math.PI*2);
+    ctx.fillStyle = grad;
+    ctx.fill();
+  }
+
+  function drawAccretionGlow(){
+    for(let r=DISK_OUTER; r>DISK_INNER; r-=18){
+      const alpha = 0.012 * (1 - (r-DISK_INNER)/(DISK_OUTER-DISK_INNER));
+      const grad = ctx.createRadialGradient(cx,cy,r-9, cx,cy,r+9);
+      const t2 = (r-DISK_INNER)/(DISK_OUTER-DISK_INNER);
+      const hue = 280 - t2*60;
+      grad.addColorStop(0,`hsla(${hue},80%,60%,${alpha*2})`);
+      grad.addColorStop(1,`hsla(${hue},60%,30%,0)`);
+      ctx.beginPath();
+      ctx.arc(cx,cy,r,0,Math.PI*2);
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = 18;
+      ctx.stroke();
+    }
+  }
+
+  function drawJet(){
+    const jlen = H * 0.45;
+    for(let side of [-1,1]){
+      const gj = ctx.createLinearGradient(cx, cy, cx, cy + side*jlen);
+      gj.addColorStop(0,   'rgba(180,120,255,0.22)');
+      gj.addColorStop(0.3, 'rgba(120,80,220,0.10)');
+      gj.addColorStop(1,   'rgba(80,40,180,0)');
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx - 18, cy + side*jlen);
+      ctx.lineTo(cx + 18, cy + side*jlen);
+      ctx.closePath();
+      ctx.fillStyle = gj;
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  function drawParticle(p){
+    const x = cx + Math.cos(p.angle) * p.dist;
+    const y = cy + Math.sin(p.angle) * p.dist * 0.34;
+    const fade = Math.min(1, (p.dist - BH_RADIUS*1.1) / 30);
+    ctx.beginPath();
+    ctx.arc(x, y, p.size, 0, Math.PI*2);
+    ctx.fillStyle = p.color + (p.opacity * fade).toFixed(3) + ')';
+    ctx.fill();
+  }
+
+  function drawEventHorizon(){
+    ctx.beginPath();
+    ctx.arc(cx, cy, BH_RADIUS, 0, Math.PI*2);
+    ctx.fillStyle = '#000';
+    ctx.fill();
+    const photon = ctx.createRadialGradient(cx,cy,BH_RADIUS*0.88, cx,cy,BH_RADIUS*1.18);
+    photon.addColorStop(0,'rgba(255,220,100,0)');
+    photon.addColorStop(0.4,'rgba(255,180,60,0.35)');
+    photon.addColorStop(0.7,'rgba(255,130,40,0.18)');
+    photon.addColorStop(1,'rgba(255,100,20,0)');
+    ctx.beginPath();
+    ctx.arc(cx,cy,BH_RADIUS*1.18,0,Math.PI*2);
+    ctx.fillStyle = photon;
+    ctx.fill();
+  }
+
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    ctx.save();
+    ctx.globalAlpha = 0.92;
+    drawAccretionGlow();
+    drawJet();
+    particles.sort((a,b) => a.layer - b.layer);
+    particles.forEach(p => {
+      p.age++;
+      p.angle += p.speed + p.drift;
+      p.dist  -= p.inward * (1 + (BH_RADIUS/p.dist)*0.8);
+      if(p.dist < BH_RADIUS * 1.05){
+        Object.assign(p, mkParticle());
+        p.age = 0;
+      }
+      drawParticle(p);
+    });
+    drawLensRing();
+    drawEventHorizon();
+    ctx.restore();
+    t++;
+    requestAnimationFrame(frame);
+  }
+
+  frame();
+})();
+</script>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="ANNA_Systems_Logo__1_.png" alt="ANNA Technologies logo" onerror="this.style.display='none'">
+    <span>ANNA Technologies</span>
+  </div>
+  <div class="nav-links">
+    <a href="#portfolio">Products</a>
+    <a href="#partner">Partners</a>
+    <a href="#why">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="nav-cta" href="#contact">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="badge-dot"></div>
+      Kathmandu, Nepal · Building tomorrow's infrastructure
+    </div>
+    <h1>Deep technology<br>for a <span class="grad-text">connected world</span></h1>
+    <p>ANNA Technologies Pvt. Ltd. designs and deploys AI, high-performance computing, and intelligent security systems — empowering Nepal's digital future and beyond.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#portfolio">Explore our work</a>
+      <a class="btn-ghost" href="#contact">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Flagship products</div></div>
+  <div class="stat"><div class="stat-num">HPC</div><div class="stat-label">National initiative</div></div>
+  <div class="stat"><div class="stat-num">AI</div><div class="stat-label">Voice & security agents</div></div>
+  <div class="stat"><div class="stat-num">NPL</div><div class="stat-label">Fintech & govt focus</div></div>
+</div>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="portfolio-header">
+    <div class="section-eyebrow">What we build</div>
+    <h2 class="section-title">Our portfolio</h2>
+    <p class="section-sub">From fraud detection to supercomputing, every product we build solves a real problem in Nepal's digital ecosystem.</p>
+  </div>
+  <div class="portfolio-grid">
+    <div class="p-card large">
+      <div class="p-icon icon-qr">🛡️</div>
+      <h3>QRShield</h3>
+      <p>AI-powered QR code fraud detection platform that safeguards Nepal's digital payments ecosystem. QRShield analyses QR patterns in real time, flags suspicious codes before the transaction, and integrates directly with payment gateways like ConnectIPS — protecting consumers and businesses from an emerging wave of QR-based scams.</p>
+      <div class="p-tags">
+        <span class="p-tag hot">Active</span>
+        <span class="p-tag">Fintech</span>
+        <span class="p-tag">AI/ML</span>
+        <span class="p-tag">Fraud prevention</span>
+        <span class="p-tag">NRB aligned</span>
+      </div>
+    </div>
+    <div class="p-card medium">
+      <div class="p-icon icon-hpc">⚡</div>
+      <h3>HPCNepal</h3>
+      <p>A not-for-profit national high-performance computing initiative anchored by an MOU with Kathmandu University. HPCNepal provides shared supercomputing access to researchers, institutions, and climate scientists — eliminating the compute barrier for Nepal's academic and scientific community.</p>
+      <div class="p-tags">
+        <span class="p-tag hot">Active</span>
+        <span class="p-tag">Research</span>
+        <span class="p-tag">HPC</span>
+        <span class="p-tag">Education</span>
+      </div>
+    </div>
+    <div class="p-card third">
+      <div class="p-icon icon-ai">🤖</div>
+      <h3>AI / ML Services</h3>
+      <p>Custom machine learning solutions — from NLP pipelines and predictive models to computer vision systems — built for Nepal's government, finance, and development sectors.</p>
+      <div class="p-tags"><span class="p-tag">NLP</span><span class="p-tag">Vision</span><span class="p-tag">Predictive</span></div>
+    </div>
+    <div class="p-card third">
+      <div class="p-icon icon-dev">⚙️</div>
+      <h3>DevOps Services</h3>
+      <p>End-to-end DevOps engineering: CI/CD pipelines, containerisation, cloud infrastructure on AWS and Azure, and managed deployments for organisations scaling their digital products.</p>
+      <div class="p-tags"><span class="p-tag">CI/CD</span><span class="p-tag">Docker</span><span class="p-tag">AWS · Azure</span></div>
+    </div>
+    <div class="p-card third">
+      <div class="p-icon icon-con">💡</div>
+      <h3>Technology Consulting</h3>
+      <p>Strategic advisory for enterprises, development finance institutions, and government bodies navigating digital transformation, AI adoption, and IT policy in South Asia.</p>
+      <div class="p-tags"><span class="p-tag">Strategy</span><span class="p-tag">Policy</span><span class="p-tag">DFI</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER -->
+<section class="partner-section" id="partner">
+  <div class="partner-inner">
+    <div class="section-eyebrow">Strategic partner</div>
+    <h2 class="section-title">Telvox</h2>
+    <p class="section-sub" style="margin:0 auto;">Amplifying our capabilities through a trusted technology partnership.</p>
+    <div class="partner-card">
+      <div class="partner-logo-box">TX</div>
+      <div>
+        <h3>Telvox — AI Voice Agent Platform</h3>
+        <p>Telvox is ANNA's strategic partner, delivering an enterprise-grade AI voice agent platform built for Nepal's telecom environment. With SIP integrations for NTC and Ncell, Telvox powers intelligent call automation, customer engagement, and business communication at scale — from startups to enterprise — through a structured tier system with transparent pricing and on-demand deployment.</p>
+        <div class="p-tags" style="margin-top:1rem;">
+          <span class="p-tag hot">Partner</span>
+          <span class="p-tag">Voice AI</span>
+          <span class="p-tag">NTC · Ncell SIP</span>
+          <span class="p-tag">Enterprise</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="section-eyebrow">Why ANNA</div>
+  <h2 class="section-title">Built differently</h2>
+  <p class="section-sub">We are not a software house. We are a deep-technology venture studio building category-defining products for Nepal and emerging markets.</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-num">01</div><h4>Nepal-first, globally capable</h4><p>Every product is designed for Nepal's regulatory, financial, and technical reality — then engineered to international standards.</p></div>
+    <div class="why-card"><div class="why-num">02</div><h4>Research-grade infrastructure</h4><p>Through HPCNepal and partnerships with Kathmandu University, we operate at the intersection of applied research and commercial deployment.</p></div>
+    <div class="why-card"><div class="why-num">03</div><h4>Honest, grounded execution</h4><p>We build what we can deliver, price what the market sustains, and grow at a pace that lets quality remain non-negotiable.</p></div>
+    <div class="why-card"><div class="why-num">04</div><h4>Deep institutional trust</h4><p>Active engagement with NRB, Nepal Police Cyber Bureau, IFC Nepal, and national fintech bodies — trust earned through transparency.</p></div>
+    <div class="why-card"><div class="why-num">05</div><h4>Full-stack capability</h4><p>From bare-metal HPC to AI model development, DevOps pipelines, and product design — one team, end-to-end ownership.</p></div>
+    <div class="why-card"><div class="why-num">06</div><h4>Mission-driven growth</h4><p>Not just a business — a deliberate effort to close Nepal's technology gap by building the infrastructure layer the ecosystem needs.</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-glow"></div>
+  <h2>Ready to build<br><span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">something remarkable?</span></h2>
+  <p>Whether you're a regulator, investor, enterprise, or researcher — let's talk.</p>
+  <a class="btn-primary" href="mailto:hello@annatechnologies.com.np" style="font-size:1.05rem;padding:0.85rem 2.5rem;">hello@annatechnologies.com.np</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="ANNA_Systems_Logo__1_.png" alt="ANNA Technologies" onerror="this.style.display='none'">
+    <span>ANNA Technologies Pvt. Ltd.</span>
+  </div>
+  <div>© 2025 ANNA Technologies Pvt. Ltd. · Kathmandu, Nepal</div>
+  <div style="display:flex;gap:1.5rem;">
+    <a href="#portfolio" style="color:var(--muted);text-decoration:none;">Products</a>
+    <a href="#partner" style="color:var(--muted);text-decoration:none;">Partners</a>
+    <a href="#contact" style="color:var(--muted);text-decoration:none;">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
