@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ANNA Technologies Pvt. Ltd.</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Rajdhani:wght@600;700&family=Space+Grotesk:wght@700;800&family=Exo+2:wght@700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -43,8 +43,8 @@
   .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
   .nav-logo img { width: 38px; height: 38px; }
   .nav-logo span {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700; font-size: 1.1rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700; font-size: 1.25rem; letter-spacing: 0.04em;
     background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
   .nav-links { display: flex; gap: 2rem; }
@@ -86,6 +86,7 @@
     background: rgba(168,85,247,0.15);
     border: 1px solid rgba(168,85,247,0.35);
     border-radius: 999px; font-size: 0.82rem; color: var(--accent);
+    font-family: 'Share Tech Mono', monospace;
     margin-bottom: 1.75rem;
     animation: fadeUp 0.6s ease both;
   }
@@ -98,13 +99,15 @@
   @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
   .hero h1 {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
     font-size: clamp(2.8rem, 5.5vw, 5rem);
-    font-weight: 800; line-height: 1.05;
+    font-weight: 700; line-height: 1.05; letter-spacing: 0.01em;
     margin-bottom: 1.5rem;
     animation: fadeUp 0.6s 0.1s ease both;
   }
   .hero h1 .grad-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800; letter-spacing: -0.02em;
     background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
   .hero p {
@@ -138,7 +141,8 @@
   }
   .stat { text-align: center; }
   .stat-num {
-    font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 700;
+    font-family: 'Exo 2', sans-serif; font-size: 2rem; font-weight: 800;
+    letter-spacing: 0.05em;
     background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
   .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
@@ -146,12 +150,13 @@
   /* SECTIONS */
   section { padding: 6rem 3rem; }
   .section-eyebrow {
-    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.78rem; font-weight: 400; letter-spacing: 0.14em;
     text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;
   }
   .section-title {
-    font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 700; line-height: 1.2; margin-bottom: 1rem;
+    font-family: 'Exo 2', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800; line-height: 1.2; letter-spacing: 0.02em; margin-bottom: 1rem;
   }
   .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; font-weight: 300; line-height: 1.75; }
 
@@ -177,7 +182,7 @@
   .p-card h3 { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.65rem; }
   .p-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
   .p-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
-  .p-tag { padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.78rem; border: 1px solid var(--border); color: var(--muted); }
+  .p-tag { padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-family: 'Share Tech Mono', monospace; border: 1px solid var(--border); color: var(--muted); }
   .p-tag.hot { background: rgba(232,51,124,0.12); border-color: rgba(232,51,124,0.3); color: #e8337c; }
   .icon-hpc { background: rgba(99,102,241,0.15); }
   .icon-qr  { background: rgba(232,51,124,0.15); }
@@ -205,7 +210,8 @@
   .why-card { padding: 1.75rem; border: 1px solid var(--border); border-radius: 16px; transition: border-color 0.3s; }
   .why-card:hover { border-color: rgba(168,85,247,0.3); }
   .why-num {
-    font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800;
+    font-family: 'Exo 2', sans-serif; font-size: 2.5rem; font-weight: 900;
+    letter-spacing: 0.06em;
     background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     line-height: 1; margin-bottom: 0.75rem;
   }
@@ -221,8 +227,9 @@
     pointer-events: none;
   }
   .cta-section h2 {
-    font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 800; line-height: 1.1; position: relative; z-index: 1; margin-bottom: 1.25rem;
+    font-family: 'Share Tech Mono', monospace; font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+    font-weight: 400; line-height: 1.2; letter-spacing: 0.03em;
+    position: relative; z-index: 1; margin-bottom: 1.25rem;
   }
   .cta-section p { color: var(--muted); font-size: 1.05rem; margin-bottom: 2.5rem; position: relative; z-index: 1; }
 
@@ -235,7 +242,7 @@
   .footer-logo { display: flex; align-items: center; gap: 0.65rem; }
   .footer-logo img { width: 28px; height: 28px; }
   .footer-logo span {
-    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem;
+    font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.04em;
     background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
 
@@ -415,7 +422,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <img src="ANNA_Systems_Logo__1_.png" alt="ANNA Technologies logo" onerror="this.style.display='none'">
+    <img src="data:image/png;base64,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" alt="ANNA Technologies logo" onerror="this.style.display='none'">
     <span>ANNA Technologies</span>
   </div>
   <div class="nav-links">
@@ -447,10 +454,10 @@
 
 <!-- STATS -->
 <div class="stats-bar">
-  <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Flagship products</div></div>
-  <div class="stat"><div class="stat-num">HPC</div><div class="stat-label">National initiative</div></div>
-  <div class="stat"><div class="stat-num">AI</div><div class="stat-label">Voice & security agents</div></div>
-  <div class="stat"><div class="stat-num">NPL</div><div class="stat-label">Fintech & govt focus</div></div>
+  <div class="stat"><div class="stat-num">5</div><div class="stat-label">Flagship products</div></div>
+  <div class="stat"><div class="stat-num">2</div><div class="stat-label">Strategic partners</div></div>
+  <div class="stat"><div class="stat-num">AI</div><div class="stat-label">Voice, fraud & music tech</div></div>
+  <div class="stat"><div class="stat-num">NPL</div><div class="stat-label">Fintech & remote work focus</div></div>
 </div>
 
 <!-- PORTFOLIO -->
@@ -458,13 +465,15 @@
   <div class="portfolio-header">
     <div class="section-eyebrow">What we build</div>
     <h2 class="section-title">Our portfolio</h2>
-    <p class="section-sub">From fraud detection to supercomputing, every product we build solves a real problem in Nepal's digital ecosystem.</p>
+    <p class="section-sub">From fraud detection to live music discovery, every product we build solves a real problem in Nepal's digital ecosystem.</p>
   </div>
   <div class="portfolio-grid">
+
+    <!-- QRShield — large feature card -->
     <div class="p-card large">
       <div class="p-icon icon-qr">🛡️</div>
       <h3>QRShield</h3>
-      <p>AI-powered QR code fraud detection platform that safeguards Nepal's digital payments ecosystem. QRShield analyses QR patterns in real time, flags suspicious codes before the transaction, and integrates directly with payment gateways like ConnectIPS — protecting consumers and businesses from an emerging wave of QR-based scams.</p>
+      <p>Nepal's first AI-powered QR code fraud detection platform. QRShield analyses QR patterns in real time, flags suspicious codes before the transaction completes, and integrates directly with payment gateways like ConnectIPS — protecting consumers and businesses from an emerging wave of QR-based financial scams. Actively engaging NRB, Nepal Police Cyber Bureau, and national fintech institutions.</p>
       <div class="p-tags">
         <span class="p-tag hot">Active</span>
         <span class="p-tag">Fintech</span>
@@ -473,44 +482,68 @@
         <span class="p-tag">NRB aligned</span>
       </div>
     </div>
+
+    <!-- SoorVibe -->
     <div class="p-card medium">
-      <div class="p-icon icon-hpc">⚡</div>
-      <h3>HPCNepal</h3>
-      <p>A not-for-profit national high-performance computing initiative anchored by an MOU with Kathmandu University. HPCNepal provides shared supercomputing access to researchers, institutions, and climate scientists — eliminating the compute barrier for Nepal's academic and scientific community.</p>
+      <div class="p-icon icon-ai">🎵</div>
+      <h3>SoorVibe</h3>
+      <p>Kathmandu's live music discovery platform. SoorVibe connects music lovers with real-time venue listings, artist schedules, and the underground live scene — making Nepal's vibrant music culture discoverable, searchable, and alive. Built for fans, venues, and artists alike, with a warm retro design and a growing network of Kathmandu venues.</p>
       <div class="p-tags">
         <span class="p-tag hot">Active</span>
-        <span class="p-tag">Research</span>
-        <span class="p-tag">HPC</span>
-        <span class="p-tag">Education</span>
+        <span class="p-tag">Music tech</span>
+        <span class="p-tag">Kathmandu</span>
+        <span class="p-tag">Discovery</span>
       </div>
     </div>
+
+    <!-- SnapLink -->
     <div class="p-card third">
-      <div class="p-icon icon-ai">🤖</div>
-      <h3>AI / ML Services</h3>
-      <p>Custom machine learning solutions — from NLP pipelines and predictive models to computer vision systems — built for Nepal's government, finance, and development sectors.</p>
-      <div class="p-tags"><span class="p-tag">NLP</span><span class="p-tag">Vision</span><span class="p-tag">Predictive</span></div>
+      <div class="p-icon icon-con">🔗</div>
+      <h3>SnapLink</h3>
+      <p>Connect within an arm's distance. The investor, co-founder, or mentor you've been searching for is likely sitting three tables away. SnapLink makes the invisible visible — proximity-based professional networking for the moments that matter.</p>
+      <div class="p-tags">
+        <span class="p-tag">Networking</span>
+        <span class="p-tag">Proximity AI</span>
+        <span class="p-tag">Mobile</span>
+      </div>
     </div>
+
+    <!-- RemotelyNepal -->
     <div class="p-card third">
-      <div class="p-icon icon-dev">⚙️</div>
-      <h3>DevOps Services</h3>
-      <p>End-to-end DevOps engineering: CI/CD pipelines, containerisation, cloud infrastructure on AWS and Azure, and managed deployments for organisations scaling their digital products.</p>
-      <div class="p-tags"><span class="p-tag">CI/CD</span><span class="p-tag">Docker</span><span class="p-tag">AWS · Azure</span></div>
+      <div class="p-icon icon-dev">🌐</div>
+      <h3>RemotelyNepal</h3>
+      <p>Nepal's remote work compliance and Employer of Record platform. RemotelyNepal helps global companies legally hire Nepali talent — handling payroll, SSF contributions, taxation, and contracts — while connecting remote-ready Nepali professionals with international opportunities.</p>
+      <div class="p-tags">
+        <span class="p-tag">Remote work</span>
+        <span class="p-tag">EOR</span>
+        <span class="p-tag">Compliance</span>
+      </div>
     </div>
+
+    <!-- Services -->
     <div class="p-card third">
-      <div class="p-icon icon-con">💡</div>
-      <h3>Technology Consulting</h3>
-      <p>Strategic advisory for enterprises, development finance institutions, and government bodies navigating digital transformation, AI adoption, and IT policy in South Asia.</p>
-      <div class="p-tags"><span class="p-tag">Strategy</span><span class="p-tag">Policy</span><span class="p-tag">DFI</span></div>
+      <div class="p-icon icon-hpc">⚙️</div>
+      <h3>AI / ML & DevOps Services</h3>
+      <p>Custom data analytics, machine learning pipelines, computer vision, and end-to-end DevOps engineering — CI/CD, containerisation, and cloud infrastructure on AWS and Azure — for organisations across Nepal and South Asia.</p>
+      <div class="p-tags">
+        <span class="p-tag">AI/ML</span>
+        <span class="p-tag">DevOps</span>
+        <span class="p-tag">Data analytics</span>
+        <span class="p-tag">Cloud</span>
+      </div>
     </div>
+
   </div>
 </section>
 
 <!-- PARTNER -->
 <section class="partner-section" id="partner">
   <div class="partner-inner">
-    <div class="section-eyebrow">Strategic partner</div>
-    <h2 class="section-title">Telvox</h2>
-    <p class="section-sub" style="margin:0 auto;">Amplifying our capabilities through a trusted technology partnership.</p>
+    <div class="section-eyebrow">Strategic partners</div>
+    <h2 class="section-title">Built on strong alliances</h2>
+    <p class="section-sub" style="margin:0 auto;">ANNA Technologies amplifies its impact through two foundational strategic partnerships — one in voice AI, one in national research computing.</p>
+
+    <!-- Telvox -->
     <div class="partner-card">
       <div class="partner-logo-box">TX</div>
       <div>
@@ -524,6 +557,23 @@
         </div>
       </div>
     </div>
+
+    <!-- HPCNepal -->
+    <div class="partner-card" style="margin-top:1.5rem;">
+      <div class="partner-logo-box" style="font-size:1.1rem;">HPC</div>
+      <div>
+        <h3>HPCNepal — National HPC Initiative</h3>
+        <p>HPCNepal is a not-for-profit national high-performance computing institution anchored by a formal MOU with Kathmandu University. Operating as an ecosystem layer for Nepal's computational future, HPCNepal provides shared supercomputing access to researchers, climate scientists, and institutions — eliminating the compute barrier for Nepal's academic and scientific community. ANNA Technologies is a founding ecosystem partner, providing strategic direction, global outreach, and AI/ML integration support.</p>
+        <div class="p-tags" style="margin-top:1rem;">
+          <span class="p-tag hot">Partner</span>
+          <span class="p-tag">HPC</span>
+          <span class="p-tag">Research</span>
+          <span class="p-tag">KU MOU</span>
+          <span class="p-tag">Climate modelling</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -553,7 +603,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">
-    <img src="ANNA_Systems_Logo__1_.png" alt="ANNA Technologies" onerror="this.style.display='none'">
+    <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCACaAJoDASIAAhEBAxEB/8QAHQAAAQQDAQEAAAAAAAAAAAAABwECAwgABQYECf/EAEsQAAECBQEEBAcNBQYHAQAAAAECAwAEBQYRIQcSMUEIIlFhEyM3cXJ0shQWFzI2QlJVYnWUs7QVJieB0SRDc4KhsTM0VJGSk9Ki/8QAHAEAAwADAQEBAAAAAAAAAAAAAwQFAgYHCAEA/8QAOxEAAgIAAwUEBggFBQAAAAAAAQIAAwQRIQUSMUFxEyNRYRQiMoGR8CRzobGywdHhBhUlNWIzQmOi0v/aAAwDAQACEQMRAD8AkUuI1L74YpURqVHTCZyrDUxylRGpUNUqI1KgZMvYeqOUqGKVDFKhhVAyZcorjlKiNSoRSompVPn6vUW6dS5N6dm3BlLTKd5WOZPYBnidIGzADMy1Qk8ylRMxT6jM02aqUtITT0jKECYmG2lKbaJ+koDA7+zniCdK2Fa9lyrdU2l1VLsytIWxRZJW8tfpEEFXZpupGD1jy80xttrstUZcW/SKbS6LKgoap3gwoKR9pScbp54SMDPzuJQOLaz/AEVz8+A93j90q0lj7AzgsUrI0OREa1QYP2Vs92mgKoLqLRudwZMi6AZeYXzCcYByeacHmUHhA2vK1q/aU+JSvSC5YrVusvDrMvc+ovgTjXGh7o/Jilc7p0bwPzrLmDuVm3To3gfnWaRRiNRhVGGKMZl5seHERZ0MRqPGFUYYo6xgXluiNUYjUYcTDFQMvLWHMYowbrZP7t0v1Nr2BAQMG22Pk1S/U2fYEJ4p8wItt050p1nHKVEalQilRGpUbQxnjvDVxVGGKMNJhilQMmXKEiqMMySpKUgqUpQSlIGSongABxPdHX2Ns8uG7GxOMoRTqUBvLqE0CG93mUDQr07wO8R1Dlz2Ls7SZezJNNwV0Aocq01q00eB3McfMjAxxUeBRtxQDblY3m8uXU8pboqOWZmttzZa+mQFdvmot21Rk4JS6QJh3sSAfiZ17VafF5xNWNp1PoUguh7M6SilSh0dqLzYMxMEabwBz36rydeCY4C5rgrNyVEz9cqD048M7m8cIaB4hCeCR5uONcxqVGA9gbDnec/Ll+/vlWmsHjJZuYfm5p2bm33ZiYeVvOvOrK1rPaVHUx3NC2Z1CrbK6hd7ZWJltzwsnL4/4zDe8HT5ydU/4f2sxz+zy2Zi8Luk6GyVIbcy7NOJ4tsJI31efUJHeoRcuRlZaRkWJKTZQxLS7aWmWkDCUISMJSB2AACE9oY00bqpx/L945beaQAvGUPXurTqAQdYIlpbWarT6eaHdUoi6KE4kIdYmyFPJTnktXx8cQFcwOsI8+3WzfehebhlW92l1IqmJQAYDZz12h3JJBHYFAcoHyjBya8QgJ1Ev0JViawSMxC3Utm1vXhJO1nZZWG3lJ6z9FnF7rrXok6jXTCsg8laYIoqsjO0uoPU6pSj8nOMnDjLyClae/HMdhGh5RkhOzdOnmp+nzb8pNsnLT7KyhaD3Ef6jgeBgo0zafQ7pkWqHtVoyJ1tAKWKxKo3X2CeagNQO0o7BlJ4gBNlX+Q+395Sp9Iw2o7xf+w/9fYYIlGGK4mCdeGyOoy1OFfsueRdVBcG+hcthUw2OxSRovHMpweOUjEC8njx0ODniCOIj6tyuM1M2LAYqrELvVnP7x1HKIqGKhxhhjEtL9BjTBstjHvapfqbPsCAkYNlr/Jql+ps+wIUvbhFduHuU6zh1GI1GMUYheV1Fa8o29p5MwyTc2tbdbuifMnQ5ByaWk+Mc+K216SzoPNx7oICqPYOzhIXcjyLquJIyKeyB4BhXYrOmO9eTzCeUe3bhdFUtafZs22FNUSlolUuH3Ejwbit4nI3h8XhxGCcnWAroOAxElTZi1Dsd1TyHE9T+Q+M2KtFqO6NTOrvzaDcl4rLdRmvASGcpkZclLXdvc1n0tM8AI5ImEJhpMMKi1ruoMhKFQJOZmEwxaglJUogADJJ5CMJjvthFnG7L0Q7NM79KphS/NEjqrXnxbXfkjJ7kntECutWtC7cBKdeSjMw09HuzVWzaP7SnmC3VKsEvOpUnCmmseLbPYcEkjtURyglxkZGnXWta5duJijsXbMzktrVoNXpZc1SsJE42fDyLh+Y8kHH8iCUnuUYpi+26y+4w+2tp5pam3W1jCkLScKSRyIIIPmi/cVn6UVmfsuuN3fIMhMnUlhqcCRoiYxorHLfA4/SHarWhs7Ebp7M8+EubExW6/YtwPDrAuowxRhxMMJioxm8UTcWjdVftKpGfoFSdlHFEeFbHWaeA5LQdFefiOREEs1/ZztT8Tdcs3aN0OYSmqS+Pc76uAKydO7C9cYAX2BlRxDFc8wrYgY58D4xl8BXe3aAlXHBhoff4jyM7HaJs1uiyit+oSyZul56lRlQVMkHgVc0E556Z4E8Y4pUEzYjflyUa56RbTc77qos/ONyrklM+MbbS4oJJbzqj4xOB1T2axp9utMp9H2tXBTqXJsycm04yW2GU7qEb8u0tW6OAG8pRwNBnSAixg260f2fi71xPomIAJ3d4MOYBA1HI68iROIMG21j+7NK9SZ9gQEjxg22t8maV6kz7AgVx4RvbZ7lOsH6jELx8WrzQ5RiF4+LV5o3Np5ZwyQo9Jk42kp9Qa/3VAvJgndJs/xKT6g1/uqBaTE7BH6MnSXt3vDFJhpMITDSYKxlGlY9lt6Yfbl5dpbz7qwhptAypaicADvJMXI2V2k1ZlnStJ8WucUPCzrqODjyh1sHmB8UdwEBnoxWZ+0qy7d8+0DKyCi1JJUnO++R1l+ZAOB3q5butkI13auJ3m7JeA4wtrf7RMiFc1LInWpJT7YmXW1uttE9ZSEFIUoDsBWgH0hD33W2GVvPOJbabSVLWo4CQBkknkIqHdm0yo1Dau3edO3gzT3fByDClY3pcZBB7C4CSezeA5QhhsM15OXKZ4bCtiCQOUt/GruyhyVy25PUOooCpacaLajjJSeKVDvBAI7wIktusSNwUGSrVNd8JKTjKXWzzAI4EclA5BHIgiNhC+qnzEXBZGzGhEoXc1Hnrer89Q6kjdm5J4tOEZwscUrTn5qkkKHcY1quMWT6VVle7aQ1elPaBmZBIan0pGq5cnRfeUKP/ion5utajF2q7tUDTpGysWMVSLBx4HrEUYaTxhTDTHxjNjpnQ7MT/Eu2PveV/NTG76RvlruT05b9IzGj2YeUu2PveV/NTG86RvlruT05b9IzCjnvB0g6z/V1+rP4lg9MGy1j+7FK9SZ9gQEjBttb5MUr1Jn2BA7THdtnuU6wcqMRPHxavNDlGIXj4tXmjdmM8z4ZIVOk6cbS0+oNe0uBYTBR6T5/iYn1Br2lwKyYm4M/Rk6S2q+uYpMe+26NPXFX5KiU1IM1OOhtBIyEDipZ7kgE/wAo1pMWO6L9l+4KQ5eFQZ/tVQR4OSCuLcvnVQ71kA5+ilOOJzhjMQKKy3PlHV9QZws2xRZK3bfkqJTkFMtJtBtGeKu1R7yck95MbKMjXXNWZG3qBO1qouFErJtF1zHE44JHeTgDvMalq7eZgtSYJelFepptEatCnvbs3UU784pJ1blwfi9xWRj0Uq7RFaiY2V1VyeuS4p6u1JeZmcdKynOjaeCW09yU4H8s8SY1ZMbFRSKawvPnNnwVAqQCHHos3sJKqPWXUHcS84VP09Sjol0fHa/zDrDllKuZEWRj5/yszMSc0zOSb62JlhxLrLqDqhaTkEfzEXX2V3fL3tZknWmwluZx4KcZH90+nRQH2TxHcRzyIl4+nJt8c4ltfCbhFy8Dx6/vOlmmGZqVdlZltLrLyC24hQyFJIwQe4iKR7VrQfsi9ZyiqClSZPhpB0/PYUTuj0k6pPenPMReCBp0h7H999lLmpFkKrFLzMSuOLqMeMa/zAZH2kp5EwvhrezbI8DP2wsf6LiArH1W0P5GU/MM5wucjI4GG54xQYzqNU6LZh5S7X+95X81MbzpG+Wy5PTlv0jMaLZh5S7Y+95X81MbzpHeWy5fTlv0jMKufXEFX/dl+rP4lg+MGy1fkxSvUmfYEBIwbbV+S9J9SZ9gQKwx3bR7pOsGSjETx6ivNDiYieV4s+aN6czzph0hW6URxtNT93te0uBUTBT6UhxtOT93te0uBQtYSkqUcADJiZgz9HTpLCLrOs2WWk7et5StHwoSafHzywSN1kEZGeRUSEjz55RdCXZZl5duXl2kMstJCG20JCUoSBgAAaAAcoH2wOyjaFmJdnWA3V6nuvzmR1mxjqNH0QTkfSUqCJGvbQxPbW5DgJk7ZnKZFa+lNev7QqzVmSDx9zSKw9PlJ0cexlCD2hIO8R9IjmkQatqt3MWTZc3WV7qpk+Jk2lf3j6gd0eYYKj3JMUrVNOOz6p2cBnnXHi8/4VZBfUVby95Q1BUScka6wTZ1GZ7Q8uEdwFO82+eUiJhpMWntPZXsoue3JGvU2kTJlpxoOJSqee3kH5yFdf4yTkHvBjafAbs3+ppj8c9/9Qw20KwciDKK7TpQ5MD8++VCJgj9Hu9zaN7IlJ14ppFVKWJgE9Vp3OG3f+53T3Kz80CDt8Bmzb6mmPxz3/1CK2FbNFJKVUWYIIwQZ57X/wDUL2Yup1KkGHfa2EtrNbg5HyH6wlxkQyEsiTkWJNpbq0MNJbSp1wrWQkYBUo6qOmpOpiaJk1cyoHSNsf3pXqqoSLIRSKupTzKUjqsu8XG+4ZO8B2EgaCBcYvRtTtGWvayp2hvbiH1Dwsm8oZ8C+nO4odnNJ+ypQ5xRydlpmSnX5KcZUxMy7qmXm1cULSSFJPmIMO12by6zp38N7R9Lw+459ZdD5jkZvNl/lMtf73lfzUxvekd5bbl9OW/SMxotl/lMtf73lfzUxvOkd5bbl9OW/SMwNz60sJ/dl+rP4lg+MGy1D+69J9SZ9gQEucG21D+61J9SZ9gQJjG9tHuk6wWKMRPHxavNCkxG6fFq80b65nAsOmkLPSmP8T0/d7XtLjz9HSzPfTeQqk6zvUujqS85vDquv8W0d+Mb57MJ+lHs6VspNtbQmJ5yVeTKOyTbbb5QfBqWCrKQrhnUad8craO1G7rToyKRQnadLyqVqcO9KBSlqUdVKJOp4DzARFQO+DVa+JEpohI0l0IyKjfDvtH/AOvpv4Ef1jz1DbbtDnpCYknanJttvtqbWpqUCFgKGDuqzoe/lEn+V3eIma4RzHdIK9xd96rl5J7fpNKKpeWKT1XXM4ccHaCRug9icjjA3JhowAEjQAYjCYrqgrUKvAS3RWEUKIbeixexpleds6oO4k6iouySlK0bmANUeZYGfSTj50Wcj58S770tMNTMu6tl9laXGnEHCkKScgjvBEEr4edpP1hTfwA/rEzFYUu+8sDitmPc+/XlrxlvYyKgnb1tJ+sKb+AH9YQ7etpX1hTfwA/rCZwjiCXYOJbgR8T+kt/GRT/4e9pX1hTPwA/rCfD3tK+sKZ+AT/WMTh2EMv8ADWLPNfif0lwYrR0s7IMpUWb5p7J8BNFMvUgkaJdxhtw+kAEE9oTzMcp8Pm0r6wpn4BP9Y8Ne2zX3XaNN0eqv0qZkZtstPNmRAyk9hzoRxB5EAx8CMpzlfZOxMfgcStwK5cxmdR8Pkzn9l/lMtf74lfzUxvOkd5bbl9OW/SMRqNkMpNzu1C225OWemVM1KXedDaCrcbS4CpascAACcmNv0j/Ldcv+JLfpGIxdtZtqMP5so/4z+JYPecG21AfetSdR/wAkz7AgJQbbT+S1J9RZ9gQItrG9snul6wSlUMUQQQdQYaVQhMb/AGGcPw9ekJVlbXavSpE0S55Vu6aAsbi5adAW4hPYlSgd4fZXnsBAjbz2za2b0kHKvsorCFvITvv0OecKXWvspUrUdnWJSeS8awHCqJZGcm5CcbnZCaflJpo5beYcKFoPcoaiJtlGR3qzun7D1EopUeK6Ser0+oUioOU+qSUxJTbXx2X0FKh368R3jSPITBcpW1ai3RTm6FtaozdTZTozV5VndmGD9MpQAR3lvjw3SDiPDd+yCfZpvvhsSoN3XQXMqBl1AzDQ70jReOe71vs8SA+kZHdsGR+z4xut905Pp90GBMJmGqyFKSQUqSSlSSMFJHEEcjCExkxlOtY4mEJhuYTMLsY9WI4mEJhCYTMLs0o1CKTCZhqlAAkkADjmO82d7K7nvFAn9xFHoiU77lSnRuoKRx8Gk6r8+idD1uRWdsuMaa+uhN+w5CcKhKnHENNoUtxxQShCQSpRPIAakwVbW2POsUz3x7SKo3atERg+CcUPdTvdu67mezBV9kRs3Lx2ebMELlNn1PbuO4Ajcerk4N5pB5hvhkdyMJOmVKIgU3TcldumqKqVwVN+fmT8UuHCGx2IQOqgdwHeckkwszEz4lmKxelfdp4n2j0HLqdfKEmubXJCg0xy3dk9EaoMhnC6k82FTUx2qwrJyeSl7ysY0TwAlnJmYnJp2bnJh6ZmHlFbrzzhWtxR4lSjqT3mIoSAMZZwOCpwoPZjU8SdSep4mZBttPHvVpHqLPsCAlBstI/urSPUWfYEB3tZhtk90vWB4qhu9EZV3wm9HQrDOQUVZCSEwm9Ee9Cb0LMZRrrku9G4tG6rgtKpCoW9U3ZJ4nxiB1mnh2LQdFD/AFHIg6xot6M3oWfIjIxtagRkRDcLl2bbUiiXvKURaVzLG6irSujD6uxZ4f8As4cAsZweJ2ibM7psr+1TjCKhSFatVOTytkp5FY4tnhx6vYo6xwxORHbbOtqN02SoS0pMifpBGHKbOHfaxz3DxbPHh1TnUHQhJkav2Dp4fpM1osq1qOY8D+R5fdOM3s6xmYNPva2bbVQt+ypxu0rnUN9ykTWjDyuZbA0xnm3w4lAJ1G1asS8qPcKKBO27P/tB0kMNst+FS+PpIWnIUOfLHzgDkQPtgdOBjuHxCMd06Ecjp8jznPZje2XaFyXlUPcVu0xybUlWHXldRhnvWs6DzDKjyBgi07ZdbdmU1mubXq0iWLid5mhyThW+6foqUjU9h3CEjmvGsam99sdWqNO979nyTVp28hO4hiTSlDziewrT8QHHBGDyKiM5WezP2YwmJe71cMM/8j7Pu8fdp5zoDR9mWydSXbimEXndjRymns49zSy+1YPVGPt5VwIQMZHA7RNpN03w6W6pOCXpqT4qnSvUYQOW9zWe9X8gI43mTzJJPee2MzC7eJlDDYFUcWWHefxPLoOA+dY7lCEwmYzPGAs0tVxSdYSMhMws7RysxcwbbS+StI9RZ/LEBHOsG60vkrSPUWfyxAlbWI7YPdL1gQ8IO2M3xHmjI6JYZziqkZT074hN+IBxjBCrmOJUJPvxm/EPKMhdmjKViTb8ZvRDyhYXZoyiCShZCgoEhSTlJBwQe0QSqJtz2h0q3XaQipszbhATLz020HZiXTzAJ0XywVhRHPPADCM5QtZk3EQrYaq0AWKD1ntqM/O1Kedn6jOTE5NvHLj77hWtXnJ/2jz70R9sKOcLO0frUDQSTejMxGIVPCFXYxxBH5jM6w3mYyFmYxlI7MZmEPKMhZ2MbQxYN9pfJSkeos/lpgIdkG20vkrSPUWfyxA62OZk/a57pes//9k=" alt="ANNA Technologies" onerror="this.style.display='none'">
     <span>ANNA Technologies Pvt. Ltd.</span>
   </div>
   <div>© 2025 ANNA Technologies Pvt. Ltd. · Kathmandu, Nepal</div>
